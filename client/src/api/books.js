@@ -1,4 +1,4 @@
-const API_BASE = "https://library-management-system-2od3.onrender.com";
+const API_BASE = "https://lib-management-system-cutd.onrender.com";
 
 async function request(path, options = {}) {
   const url = `${API_BASE.replace(/\/$/, '')}${path}`;
