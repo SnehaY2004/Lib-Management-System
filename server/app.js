@@ -7,12 +7,16 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: false,
+    credentials: true,
   }),
 );
+
+// Handle preflight requests
+app.options("*", cors());
+
 app.use(express.json());
 
 app.use("/books", bookRoutes);
